@@ -1,0 +1,27 @@
+import requests
+
+# Your image file
+IMAGE_PATH = "image.png"
+
+# Imgur API (anonymous upload)
+url = "https://api.imgur.com/3/image"
+headers = {
+    "Authorization": "Client-ID 546c25a59c58ad7"  # public demo client ID
+}
+
+with open(IMAGE_PATH, "rb") as img:
+    response = requests.post(
+        url,
+        headers=headers,
+        files={"image": img}
+    )
+
+data = response.json()
+
+if data["success"]:
+    link = data["data"]["link"]
+    print("\n✅ Upload Successful!")
+    print("View Link: ", link)
+    print("Direct Download:", link.replace(".jpg", ".png"))
+else:
+    print("❌ Upload failed:", data)
