@@ -1,0 +1,14 @@
+# Store names and birthdays in a dictionary
+friends = {
+    "Rahim": "12-03-2010",
+    "Karim": "25-07-2011",
+    "Ayan": "01-01-2010",
+    "Nabil": "15-09-2012",
+    "Sami": "30-12-2011"
+}
+
+# Print all birthdays
+print("Friend's Birthdays:\n")
+
+for name, birthday in friends.items():
+    print(name + " : " + birthday)
