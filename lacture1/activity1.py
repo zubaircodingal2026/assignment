@@ -1,4 +1,4 @@
-print("Welcometo the world of programing")
+print("welcome to the world of programing")
 
 print(4)
 
