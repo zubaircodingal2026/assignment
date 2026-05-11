@@ -1,11 +1,12 @@
-medical_cause = input("enter your medical cause(yes/no)").strip().upper()
+medical_cause = input("did YOU HAVE A MEDICAL CAUSE? (yes/no) ").strip().upper()
 
-if medical_cause =="yes":
-    print("you are allowed to sit for exam")
+if medical_cause == 'yes':
+    print("you are allowed")
 else:
-    attendance = int(input("Enter attendance : "))
     
-if attendance > 75:
-    print("you are allowed to sit in exam")
-else:
-    print("you are not allowed to sit in exam")
+    atten = int(input("enter the attendance of the student: "))
+    
+    if atten >= 75:
+        print("ALLOWED")
+    else:
+        print("NOT ALLOWED")
