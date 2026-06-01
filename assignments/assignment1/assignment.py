@@ -1,8 +1,17 @@
-temperature = float(input("Enter the current temperature: "))
+import turtle
 
-if temperature >= 25:
-  print("Good weather, Roahn can wear light clothes")
-elif  15 <= temperature < 25 :
-  print("Weather is medium, Rohan should wear light clothes with caution")
-else:
-  print("Weather  is cold, wear a jacket or pullover")
+screen = turtle.Screen()
+screen.title("Drawing a square")
+screen.bgcolor('orange')
+
+sq_turtle = turtle.Turtle()
+sq_turtle.color("brown")
+sq_turtle.pensize(3)
+sq_turtle.speed(3)
+
+for _ in range(4):
+    sq_turtle.forward(100)
+    sq_turtle.right(90)
+
+screen.exitonclick()
+        
