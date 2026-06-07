@@ -1,11 +1,13 @@
-# Number Counter Program
+def shutdown_computer():
+    answer = input("Do you want to shutdown the computer? (yes/no): ")
 
-start = int(input("Enter starting number: "))
-end = int(input("Enter ending number: "))
+    if answer.lower() == "yes":
+        print("Shutting down...")
 
-print("\nCounting numbers...\n")
+    elif answer.lower() == "no":
+        print("Shutdown aborted.")
 
-for number in range(start, end + 1):
-    print("Number =", number)
+    else:
+        print("Sorry, I didn't understand your answer.")
 
-print("\nCounting Finished!")
+shutdown_computer()

@@ -1,0 +1,24 @@
+#bmi calculator
+#body mass index
+
+def bmi_calculator(weight,height):
+    return weight/(height**2)
+
+
+def healthcheak(bmi_calculator,weight,height):
+    bmi = bmi_calculator(weight,height)
+    
+    if bmi <18.5:
+        return"Underweight"
+    elif bmi < 25:
+        return"normalweight"
+    elif bmi< 30:
+        return"overweight"
+    else:
+        return"obese"
+        
+weight = float(input("enter your weight in kgs : "))
+height = float(input("enter your height in cms  : "))
+
+print(f"result : {healthcheak(bmi_calculator,weight,height)}")
+        
