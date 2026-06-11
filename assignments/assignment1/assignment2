@@ -1,14 +1,7 @@
-# Store names and birthdays in a dictionary
-friends = {
-    "Rahim": "12-03-2010",
-    "Karim": "25-07-2011",
-    "Ayan": "01-01-2010",
-    "Nabil": "15-09-2012",
-    "Sami": "30-12-2011"
-}
+def circumference(radius):
+    pi = 3.14159
+    return 2 * pi * radius
 
-# Print all birthdays
-print("Friend's Birthdays:\n")
-
-for name, birthday in friends.items():
-    print(name + " : " + birthday)
+# Example
+r = float(input("Enter the radius: "))
+print("Circumference =", circumference(r))
