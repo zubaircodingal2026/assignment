@@ -1,8 +1,11 @@
-num = int(input("enter your num : "))
-power = int(input("enter your power : "))
+def calculate_change():
+    bill = 2.50
+    paid = 4.00
 
+    change = paid - bill
 
-for i in range (power):
-    result = power * num
-    
-print("power is : ", result)
+    print("Total bill: $", bill)
+    print("Amount paid: $", paid)
+    print("Change to return: $", change)
+
+calculate_change()
