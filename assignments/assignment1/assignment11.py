@@ -1,11 +1,19 @@
-age = [10,20,30,40,50,60,70,80,90,100]
+import math
 
-try:
-    index = int(input("Enter age : "))
-    print("value =",age[index])
-except IndexError:
-    print("error:age is out of range.")
-except ValueError:
-    print("Error:please enter a valid age.")
-else:
-    print("element accessed successfully.")
+def calculate_trigonometry():
+    angle = float(input("Enter the angle in degrees: "))
+
+    # Convert degrees to radians
+    radians = math.radians(angle)
+
+    # Calculate trigonometric values
+    sine = math.sin(radians)
+    cosine = math.cos(radians)
+    tangent = math.tan(radians)
+
+    print(f"\nAngle: {angle}°")
+    print(f"sin({angle}) = {sine:.4f}")
+    print(f"cos({angle}) = {cosine:.4f}")
+    print(f"tan({angle}) = {tangent:.4f}")
+
+calculate_trigonometry()
