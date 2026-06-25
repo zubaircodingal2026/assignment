@@ -1,7 +1,7 @@
-def circumference(radius):
-    pi = 3.14159
-    return 2 * pi * radius
+import calendar
 
-# Example
-r = float(input("Enter the radius: "))
-print("Circumference =", circumference(r))
+def print_months():
+    for month in calendar.month_name[1:]:
+        print(month)
+
+print_months()
