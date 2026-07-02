@@ -2,10 +2,10 @@ import turtle
 
 screen = turtle.Screen()
 screen.title("Drawing a square")
-screen.bgcolor('orange')
+screen.bgcolor('red')
 
 sq_turtle = turtle.Turtle()
-sq_turtle.color("brown")
+sq_turtle.color("blue")
 sq_turtle.pensize(3)
 sq_turtle.speed(3)
 
