@@ -1,28 +1,37 @@
+#part (A)
 
-# zip 
-names = ["zubeir", "john", "rahim","karim","rifat"]
-scores = [92, 85, 90,70,89]
-for name, score in zip(names, scores):
-  print(f"{name} : {score}")
+#example(1)
+num1 = 34
+num2 = 12
+num3 = 56
 
-# map
-prices = [10, 5, 40]
-price_new = []
-for price in prices:
-  price += 2
-  price_new.append(price)
-print(price_new)
-marked_up = list(map(lambda p: p + 2, prices))
-print(marked_up)
+if (num1 > num2):
+  print("num1 is greater than num 2,which is num1 = 34")
+else:
+  print("num1 is smaller than num2")
+  
+if (num2 < num3):
+  print("num2 is smaller than num3, which is num2 = 12")
+else:
+  print("num2 is greater than num3")
 
-# exit
-while True:
-  number = int(input("Enter a number : "))
-  if number == 0:
-    exit()
-  print(number)
-  choice = input("Do you want to try again ? (yes/no)")
-  if choice in ['yes','y']:
-    continue
-  else:
-    exit()
+print("smallest number is ",num2)
+
+
+#example(2)
+num1 = -5
+num2 = -15
+num3 = 0
+
+if (num1 > num2):
+  print("num1 is greater than num 2,which is num1 = -5")
+else:
+  print("num1 is smaller than num2")
+  
+if (num2 < num3):
+  print("num2 is smaller than num3, which is num2 = -15 ")
+else:
+  print("num2 is greater than num3")
+  
+  
+print("smallest number is ",num2)

@@ -1,44 +1,64 @@
-fruits_basket1 = {"Apple","Banana","Pinapple"
-                 "Grapps"}
-fruits_basket2 = {"Kiwi","coconut","goava",
-                  "mango"}
+class DailyMessage:
+    def __init__(self):
+        self.message = ""
+    def get_message(self):
+        self.message = input("Enter today's message: ")
 
-print("fruit_basket1:",fruits_basket1)
-print("fruit_basket2:",fruits_basket2)
+    def print_message(self):
+        print("Message in uppercase:", self.message.upper())
+        
+daily_text = DailyMessage()
+daily_text.get_message()
+daily_text.print_message()
+ 
+class HelperSession:
+    def __init__(self):
+        print("Daily Data Helper session created")
 
-
-# PART 2: Add a new snack to snack_box1
-fruits_basket1.add("tomato")
-print("fruit_basket 1 after adding tomato:", fruits_basket1)
-
-# PART 3: Find snacks common to both boxes
-common_snacks = fruits_basket1.intersection(fruits_basket2)
-print("Snacks in both baskets:", common_snacks)
-
-# PART 4: Create an array of snack counts using the array module
-import array as arr
-fruit_counts = arr.array('i', [4, 6, 3, 5])
-print("fruit counts array:", fruit_counts)
-
-# PART 5: Add new snack counts to the array
-fruit_counts.insert(0, 2)
-fruit_counts.append(7)
-print("fruit counts after adding items:", fruit_counts)
-
-# PART 6: Count how many times the number 5 appears in the array
-count_of_5 = fruit_counts.count(5)
-print("Number of times 5 appears:", count_of_5)
-
-# PART 7: Reverse the order of the snack counts array
-fruit_counts.reverse()
-print("Reversed fruit counts array:", fruit_counts)
-
-# PART 8: Print the final school snack counter summary
+    def __del__(self):
+        print("Daily Data Helper session ended")
+ 
+ 
+def create_session():
+    print("Making helper session...")
+    session = HelperSession()
+    print("Session is ready...")
+    return session
+ 
+ 
 print("")
-print("===== SCHOOL SNACK COUNTER =====")
-print("fruit_basket 1:", fruits_basket1)
-print("fruit_basket 2:", fruits_basket2)
-print("Shared fruit:", common_snacks)
-print("fruit counts:", fruit_counts)
-print("================================")
+print("Calling create_session() function...")
+session_obj = create_session()
+print("Program is still running...")
+ 
+ 
+class PairFinder:
+ 
+    def find_pair(self, numbers, target):
+        lookup = {}
+ 
+        for index, number in enumerate(numbers):
+            needed_number = target - number
+ 
+            if needed_number in lookup:
+                return (lookup[needed_number], index)
+ 
+            lookup[number] = index
+ 
+        return None
+ 
+ 
+numbers = (10, 20, 30, 40, 50, 60, 70)
+ 
+target_value = int(input("Enter target sum to search: "))
+ 
+result = PairFinder().find_pair(numbers, target_value)
+ 
+if result is not None:
+    print("index1=%d, index2=%d" % result)
+else:
+    print("No matching pair found.")
+ 
 
+del session_obj
+print("Program End")
