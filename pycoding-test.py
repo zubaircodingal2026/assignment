@@ -1,37 +1,54 @@
-#part (A)
-
-#example(1)
-num1 = 34
-num2 = 12
-num3 = 56
-
-if (num1 > num2):
-  print("num1 is greater than num 2,which is num1 = 34")
-else:
-  print("num1 is smaller than num2")
-  
-if (num2 < num3):
-  print("num2 is smaller than num3, which is num2 = 12")
-else:
-  print("num2 is greater than num3")
-
-print("smallest number is ",num2)
-
-
-#example(2)
-num1 = -5
-num2 = -15
-num3 = 0
-
-if (num1 > num2):
-  print("num1 is greater than num 2,which is num1 = -5")
-else:
-  print("num1 is smaller than num2")
-  
-if (num2 < num3):
-  print("num2 is smaller than num3, which is num2 = -15 ")
-else:
-  print("num2 is greater than num3")
-  
-  
-print("smallest number is ",num2)
+class BOOK:
+    def __init__(self, name):
+        self.name = name
+        
+        #private variables
+        #cant acess directly
+        self.__age = age
+        self.__pocketmoney = pocketmoney
+        
+        
+    def __printName(self):
+        print(self.mame)
+        
+        
+    #getters and setters
+    def getAge(self):
+        return self.__age
+    
+    def setAge(self , age):
+        self.__age = age
+        
+    def getPocketMoney(self):
+        return self.__PocketMoney
+    
+    def setPocketMoney(self,pocketmoney):
+        self.__pocketmoney = pocketmoney
+        
+    def getName(self):
+        self.__printName
+        
+if __name__ =="__main__":
+    s1 = student("kevin",13,1000)
+    print(s1.getName())
+    def displayAllDetail():
+        print("\nstudent Detail...\n")
+        print(s1.getName())
+        print(s1.getAge())
+        print(s1.getPocketMoney())
+        
+    displayAllDetail()
+    
+    
+    while True:
+        print("\ndo you update the info ?")
+        choice = input("Enter yes/no : ")
+        if choice not in ['yes','y']:
+            break
+        
+        newAge = int(input("\nEnter new age : "))
+        newPocketMoney = newAge = int(input("Enter new PcketMOney : "))
+        s1.setAge(newAge)
+        s1.setPocketMoney(newPocketMoney)
+        displayAllDetail()
+        
