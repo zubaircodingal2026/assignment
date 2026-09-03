@@ -1,3 +1,6 @@
+from abc import ABC,abstractmethod
+from typing import override
+
 class Shape(ABC):
     @abstractmethod
     def calculate_area(self):
@@ -27,7 +30,7 @@ class Triangle(Shape):
         self.base = base
         self.height = height
 
-    @overide
+    @override
     def calculate_area(self):
         return 0.5*self.base*self.height
 

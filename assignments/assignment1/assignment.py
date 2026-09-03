@@ -1,64 +1,73 @@
-class DailyMessage:
-    def __init__(self):
-        self.message = ""
-    def get_message(self):
-        self.message = input("Enter today's message: ")
-
-    def print_message(self):
-        print("Message in uppercase:", self.message.upper())
-        
-daily_text = DailyMessage()
-daily_text.get_message()
-daily_text.print_message()
+# Smart Device Command Center
  
-class HelperSession:
-    def __init__(self):
-        print("Daily Data Helper session created")
-
-    def __del__(self):
-        print("Daily Data Helper session ended")
+# PART 1: Import tools for abstraction
+from abc import ABC, abstractmethod
+ 
+# PART 2: Create an abstract class
+class SmartDevice(ABC):
+ 
+    # Common method
+    def show_device(self, name):
+        print("Device Name:", name)
+ 
+    # Abstract method
+    @abstractmethod
+    def turn_on(self):
+        pass
  
  
-def create_session():
-    print("Making helper session...")
-    session = HelperSession()
-    print("Session is ready...")
-    return session
+# PART 3: Create subclasses that override the abstract method
+class SmartLight(SmartDevice):
+    def turn_on(self):
+        print("Smart Light is now ON")
  
+ 
+class SmartFan(SmartDevice):
+    def turn_on(self):
+        print("Smart Fan is now ON")
+ 
+ 
+class SmartSpeaker(SmartDevice):
+    def turn_on(self):
+        print("Smart Speaker is now ON")
+ 
+ 
+# PART 4: Create objects and call their methods
+light = SmartLight()
+fan = SmartFan()
+speaker = SmartSpeaker()
+ 
+light.show_device("Living Room Light")
+light.turn_on()
+ 
+fan.show_device("Bedroom Fan")
+fan.turn_on()
+ 
+speaker.show_device("Music Speaker")
+speaker.turn_on()
+ 
+ 
+# PART 5: Polymorphism without inheritance
+# These classes do not inherit from SmartDevice,
+# but they share the same method name.
+ 
+class SecurityCamera:
+    def check_status(self):
+        print("Security Camera is recording")
+ 
+ 
+class DoorLock:
+    def check_status(self):
+        print("Door Lock is secure")
+ 
+ 
+# PART 6: Use the shared method name
+devices = [SecurityCamera(), DoorLock()]
  
 print("")
-print("Calling create_session() function...")
-session_obj = create_session()
-print("Program is still running...")
+print("===== SMART DEVICE STATUS =====")
  
+for device in devices:
+    device.check_status()
  
-class PairFinder:
- 
-    def find_pair(self, numbers, target):
-        lookup = {}
- 
-        for index, number in enumerate(numbers):
-            needed_number = target - number
- 
-            if needed_number in lookup:
-                return (lookup[needed_number], index)
- 
-            lookup[number] = index
- 
-        return None
- 
- 
-numbers = (10, 20, 30, 40, 50, 60, 70)
- 
-target_value = int(input("Enter target sum to search: "))
- 
-result = PairFinder().find_pair(numbers, target_value)
- 
-if result is not None:
-    print("index1=%d, index2=%d" % result)
-else:
-    print("No matching pair found.")
- 
-
-del session_obj
-print("Program End")
+print("===============================")
