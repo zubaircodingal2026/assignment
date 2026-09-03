@@ -1,73 +1,48 @@
-# Smart Device Command Center
- 
-# PART 1: Import tools for abstraction
-from abc import ABC, abstractmethod
- 
-# PART 2: Create an abstract class
-class SmartDevice(ABC):
- 
-    # Common method
-    def show_device(self, name):
-        print("Device Name:", name)
- 
-    # Abstract method
-    @abstractmethod
-    def turn_on(self):
+# ── BOOK CLASS ─────────────────────────────────────────────────
+# TODO: Define a class called Book
+class Book:
+
+    # TODO: Define __init__(self, title, author)
+    #   Set up three attributes:
+    #     self.title   = title
+    #     self.author  = author
+    #     self.is_borrowed = False   ← starts as not borrowed
+    def __init__(self, title, author):
+        pass  # replace pass with your attribute assignments
+
+    # TODO: Define borrow(self)
+    #   If self.is_borrowed is already True → print that it's already borrowed
+    #   Otherwise → set self.is_borrowed = True and print a borrow message
+    def borrow(self):
         pass
- 
- 
-# PART 3: Create subclasses that override the abstract method
-class SmartLight(SmartDevice):
-    def turn_on(self):
-        print("Smart Light is now ON")
- 
- 
-class SmartFan(SmartDevice):
-    def turn_on(self):
-        print("Smart Fan is now ON")
- 
- 
-class SmartSpeaker(SmartDevice):
-    def turn_on(self):
-        print("Smart Speaker is now ON")
- 
- 
-# PART 4: Create objects and call their methods
-light = SmartLight()
-fan = SmartFan()
-speaker = SmartSpeaker()
- 
-light.show_device("Living Room Light")
-light.turn_on()
- 
-fan.show_device("Bedroom Fan")
-fan.turn_on()
- 
-speaker.show_device("Music Speaker")
-speaker.turn_on()
- 
- 
-# PART 5: Polymorphism without inheritance
-# These classes do not inherit from SmartDevice,
-# but they share the same method name.
- 
-class SecurityCamera:
-    def check_status(self):
-        print("Security Camera is recording")
- 
- 
-class DoorLock:
-    def check_status(self):
-        print("Door Lock is secure")
- 
- 
-# PART 6: Use the shared method name
-devices = [SecurityCamera(), DoorLock()]
- 
-print("")
-print("===== SMART DEVICE STATUS =====")
- 
-for device in devices:
-    device.check_status()
- 
-print("===============================")
+
+    # TODO: Define return_book(self)
+    #   If self.is_borrowed is False → print that it wasn't borrowed
+    #   Otherwise → set self.is_borrowed = False and print a return message
+    def return_book(self):
+        pass
+
+    # TODO: Define __str__(self)
+    #   Return a string like:  "Title by Author [Available]"
+    #   or                     "Title by Author [Borrowed]"
+    def __str__(self):
+        pass
+
+
+# ── LIBRARY ────────────────────────────────────────────────────
+# TODO: Create at least 3 Book objects with different titles and authors
+# Example: book1 = Book("Python Crash Course", "Eric Matthes")
+
+print("=" * 42)
+print("         📚  LIBRARY SYSTEM")
+print("=" * 42)
+
+# TODO: Print each book (uses __str__ automatically)
+
+# TODO: Borrow some books using .borrow()
+# TODO: Try to borrow the same book twice to test the guard message
+
+# TODO: Return a book using .return_book()
+# TODO: Try to return a book that was never borrowed to test that guard
+
+# TODO: Print each book again to show updated status
